@@ -5,12 +5,12 @@ import React from 'react';
 import './antModal.css'
 
 export class ANTModalImpl extends React.Component {
-    state = { id: '', isVisible: false, name: '', username: '' }
+    state = { id: '', isVisible: false, name: '', username: '', isLiked: null }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.id && this.props.id !== nextProps.id) {
             const currentUserInstance = nextProps.users.find((user) => user.id === nextProps.id)
-            const { name, email, website, phone, username } = currentUserInstance;
+            const { name, email, website, phone, username, isLiked } = currentUserInstance;
             this.props.form.setFields({
                 name: {
                     value: name
@@ -25,12 +25,13 @@ export class ANTModalImpl extends React.Component {
                     value: phone
                 },
             });
-            this.setState({ id: nextProps.id, name, username, isVisible: true })
+            this.setState({ id: nextProps.id, isLiked, name, username, isVisible: true })
         }
     }
 
     handleSubmit = () => {
         const { form: { validateFieldsAndScroll, resetFields }, onClose } = this.props;
+        const { username, id, isLiked } = this.state;
         let hasFormError = null;
         let userValues = null;
         validateFieldsAndScroll((err, values) => {
@@ -40,9 +41,8 @@ export class ANTModalImpl extends React.Component {
         if (hasFormError) {
             return;
         }
-        const { username, id } = this.state;
         this.setState({ isVisible: false })
-        onClose({ ...userValues, username, id })
+        onClose({ ...userValues, username, isLiked, id })
         resetFields();
     }
 
