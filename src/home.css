@@ -1,0 +1,81 @@
+.card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 1rem !important;
+    position: relative;
+}
+
+.header {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+.user-card-container {
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user-card-container .card-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.user-card-container .card-1:hover {
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.user-card-container .card-1 .ant-card-body {
+    padding: 0px;
+}
+
+.user-card-container .card-1 .avatar {
+    padding: 30px;
+    border: 1px solid gainsboro;
+    border-radius: 100%;
+    margin: 23px;
+}
+
+.user-card-container .card-1 .user-info {
+    padding: 10px;
+    font-size: 16px;
+    border-top: 1px solid #cec8c8;
+}
+
+.user-card-container .card-1 .username {
+    font-size: 19px;
+    padding: 14px 0px;
+}
+
+.user-card-container .card-1 .anticon {
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+.user-card-container .card-1 .user-data {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 5px 0px;
+}
+
+.user-card-container .card-1 .icon-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #d4d4d4;
+    background-color: #9ebd6d;
+    color: white;
+}
+
+.user-card-container .card-1 .icon-container .anticon-heart {
+    color: #e42a2a;
+}
+
+.user-card-container .card-1 .icon-container .is-liked {
+    color: #e42a2a;
+}
